@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KLRDTZ7P4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7KLRDTZ7P4');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your Steal A Brainrot character earnings with our advanced calculator. Support for mutations, rebirths, and all multipliers. Free online tool.">
+    <meta name="keywords" content="steal a brainrot, calculator, earnings, mutations, characters, roblox, brainrot calculator">
+    <meta name="author" content="Steal A Brainrot Calculator">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Steal A Brainrot Value Calculator - Advanced Earnings Calculator">
+    <meta property="og:description" content="Calculate your character earnings with mutations, rebirths, and multipliers. The most comprehensive Steal A Brainrot calculator available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stealabrainrotcalculator.com/">
+    <meta property="og:image" content="https://stealabrainrotcalculator.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Steal A Brainrot Value Calculator">
+    <meta name="twitter:description" content="Advanced calculator for Steal A Brainrot character earnings">
+    
+    <title>Steal A Brainrot Value Calculator - Advanced Earnings Calculator</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common-styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Steal A Brainrot Calculator",
+      "description": "Advanced calculator for Steal A Brainrot character earnings with mutations and multipliers",
+      "url": "https://stealabrainrotcalculator.com/",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="https://stealabrainrotcalculator.com/" class="nav-logo" aria-label="Steal a Brainrot Calculator Home">
+        <i class="fas fa-brain" aria-hidden="true"></i> 
+        <span>Steal a Brainrot Calculator</span>
+      </a>
+      
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      
+      <div class="nav-links" id="navLinks" role="menubar">
+        <a href="https://stealabrainrotcalculator.com/" class="nav-link active" role="menuitem">
+          <i class="fas fa-home" aria-hidden="true"></i> Home
+        </a>
+        <a href="/comparison" class="nav-link" role="menuitem">
+          <i class="fas fa-balance-scale" aria-hidden="true"></i> Comparison
+        </a>
+        <a href="/optimizer" class="nav-link" role="menuitem">
+          <i class="fas fa-chart-line" aria-hidden="true"></i> Optimizer
+        </a>
+        <a href="/mutations" class="nav-link" role="menuitem">
+          <i class="fas fa-dna" aria-hidden="true"></i> Mutations
+        </a>
+        <a href="/characters" class="nav-link" role="menuitem">
+          <i class="fas fa-users" aria-hidden="true"></i> Characters
+        </a>
+        <a href="/items" class="nav-link" role="menuitem">
+          <i class="fas fa-shopping-cart" aria-hidden="true"></i> Items
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="container">
+    <!-- Hero Section -->
+    <section class="content-box fade-in-up">
+      <header>
+        <h1>
+          <i class="fas fa-calculator" aria-hidden="true"></i> 
+          Steal A Brainrot Value Calculator
+        </h1>
+      </header>
+      
+      <div class="ad-container" role="complementary" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <div id="hero-ad">
+          <!-- AdSense Ad Code Here -->
+        </div>
+      </div>
+      
+      <!-- Calculator Form -->
+      <form class="calculator-form" onsubmit="return false;" role="form" aria-label="Character earnings calculator">
+        <div class="grid">
+          <!-- Character Selection -->
+          <fieldset class="input-group">
+            <legend class="sr-only">Character Selection</legend>
+            <label for="character">
+              <i class="fas fa-user" aria-hidden="true"></i> Select Character:
+            </label>
+            <select id="character" name="character" aria-describedby="character-help" onchange="updateCharacterIcon()">
+              <!-- Options will be populated by JavaScript -->
+            </select>
+            <small id="character-help" class="help-text">Choose your character to calculate earnings</small>
+          </fieldset>
+          
+          <div class="input-group">
+            <label for="quantity">
+              <i class="fas fa-copy" aria-hidden="true"></i> Quantity Owned:
+            </label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="999" aria-describedby="quantity-help">
+            <small id="quantity-help" class="help-text">Number of copies you own</small>
+          </div>
+          
+          <div class="input-group">
+            <label for="level">
+              <i class="fas fa-level-up-alt" aria-hidden="true"></i> Character Level:
+            </label>
+            <input type="number" id="level" name="level" value="1" min="1" max="100" aria-describedby="level-help">
+            <small id="level-help" class="help-text">Current character level (1-100)</small>
+          </div>
+        </div>
+        
+        <div class="grid">
+          <fieldset class="input-group">
+            <legend class="sr-only">Mutation Selection</legend>
+            <label for="mutation">
+              <i class="fas fa-dna" aria-hidden="true"></i> Primary Mutation:
+            </label>
+            <select id="mutation" name="mutation" aria-describedby="mutation-help">
+              <option value="1">None</option>
+              <option value="1.25">Gold (×1.25)</option>
+              <option value="1.5">Diamond (×1.5)</option>
+              <option value="10">Rainbow (×10)</option>
+              <option value="4">Candy (×4)</option>
+            </select>
+            <small id="mutation-help" class="help-text">Primary mutation multiplier</small>
+          </fieldset>
+          
+          <fieldset class="input-group">
+            <legend class="sr-only">Secondary Mutation Selection</legend>
+            <label for="secondary-mutation">
+              <i class="fas fa-dna" aria-hidden="true"></i> Secondary Mutation:
+            </label>
+            <select id="secondary-mutation" name="secondary-mutation" aria-describedby="secondary-mutation-help">
+              <option value="1">None</option>
+              <option value="2">Bloodrot (×2)</option>
+              <option value="3">Tacos (×3)</option>
+              <option value="4">Disco (×4)</option>
+              <option value="5">Tung Tung Sahur (×5)</option>
+              <option value="6">Nyancat (×6)</option>
+              <option value="6">Firework (×6)</option>
+            </select>
+            <small id="secondary-mutation-help" class="help-text">Secondary mutation multiplier</small>
+          </fieldset>
+          
+          <div class="input-group">
+            <label for="luck">
+              <i class="fas fa-clover" aria-hidden="true"></i> Server Luck (1-5x):
+            </label>
+            <input type="number" id="luck" name="luck" value="1" min="1" max="5" step="0.1" aria-describedby="luck-help">
+            <small id="luck-help" class="help-text">Server luck multiplier</small>
+          </div>
+        </div>
+        
+        <div class="grid">
+          <div class="input-group">
+            <label for="rebirths">
+              <i class="fas fa-redo" aria-hidden="true"></i> Rebirth Level:
+            </label>
+            <input type="number" id="rebirths" name="rebirths" value="0" min="0" max="12" aria-describedby="rebirths-help">
+            <small id="rebirths-help" class="help-text">Current rebirth level (0-12)</small>
+          </div>
+          
+          <div class="input-group">
+            <label for="multiplier">
+              <i class="fas fa-times-circle" aria-hidden="true"></i> Global Multiplier:
+            </label>
+            <input type="number" id="multiplier" name="multiplier" value="1" min="1" step="0.5" aria-describedby="multiplier-help">
+            <small id="multiplier-help" class="help-text">Additional global multiplier</small>
+          </div>
+          
+          <div class="input-group">
+            <label for="base-lock">
+              <i class="fas fa-lock" aria-hidden="true"></i> Base Lock Time (seconds):
+            </label>
+            <input type="number" id="base-lock" name="base-lock" value="30" min="30" max="180" aria-describedby="base-lock-help">
+            <small id="base-lock-help" class="help-text">Base lock time in seconds</small>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+          <button type="button" class="btn btn-primary" onclick="calculateEarnings()" aria-describedby="calculate-help">
+            <i class="fas fa-calculator" aria-hidden="true"></i> Calculate
+          </button>
+          <button type="button" class="btn btn-primary" onclick="saveSetup()" aria-describedby="save-help">
+            <i class="fas fa-save" aria-hidden="true"></i> Save Setup
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="loadSetup()" aria-describedby="load-help">
+            <i class="fas fa-folder-open" aria-hidden="true"></i> Load Setup
+          </button>
+          <button type="button" class="btn btn-danger" onclick="resetCalculator()" aria-describedby="reset-help">
+            <i class="fas fa-redo" aria-hidden="true"></i> Reset
+          </button>
+        </div>
+        
+        <div class="sr-only">
+          <div id="calculate-help">Calculate earnings based on current settings</div>
+          <div id="save-help">Save current calculator setup</div>
+          <div id="load-help">Load previously saved setup</div>
+          <div id="reset-help">Reset all values to default</div>
+        </div>
+      </form>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="content-box result" role="region" aria-label="Calculation results">
+      <div class="character-info">
+        <div class="character-icon" id="char-icon" aria-hidden="true">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <h2 id="result-title">Character Earnings</h2>
+          <div id="char-tags" aria-label="Character attributes"></div>
+        </div>
+      </div>
+      
+      <div class="grid">
+        <div>
+          <p><strong>Base Earnings:</strong> <span class="result-value" id="base-earnings" aria-label="Base earnings per second">$0</span>/s</p>
+          <p><strong>With Mutations:</strong> <span class="result-value" id="mutated-earnings" aria-label="Earnings with mutations">$0</span>/s</p>
+          <p><strong>With Multipliers:</strong> <span class="result-value" id="total-earnings" aria-label="Total earnings per second">$0</span>/s</p>
+        </div>
+        <div>
+          <p><strong>Per Minute:</strong> <span class="result-value" id="earnings-per-minute" aria-label="Earnings per minute">$0</span></p>
+          <p><strong>Per Hour:</strong> <span class="result-value" id="earnings-per-hour" aria-label="Earnings per hour">$0</span></p>
+          <p><strong>Per Day:</strong> <span class="result-value" id="earnings-per-day" aria-label="Earnings per day">$0</span></p>
+        </div>
+        <div>
+          <p><strong>Per Week:</strong> <span class="result-value" id="earnings-per-week" aria-label="Earnings per week">$0</span></p>
+          <p><strong>Per Month:</strong> <span class="result-value" id="earnings-per-month" aria-label="Earnings per month">$0</span></p>
+          <p><strong>Per Year:</strong> <span class="result-value" id="earnings-per-year" aria-label="Earnings per year">$0</span></p>
+        </div>
+      </div>
+      
+      <div class="progress-bar" role="progressbar" aria-label="Earning potential" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-fill" id="earning-potential"></div>
+      </div>
+      <p style="text-align: center; margin-top: 0.5rem;">
+        <small>Earning potential compared to best character</small>
+      </p>
+    </section>
+    
+    <div class="ad-container" role="complementary" aria-label="Advertisement">
+      <span class="ad-label">Advertisement</span>
+      <div id="mid-content-ad">
+        <!-- AdSense Ad Code Here -->
+      </div>
+    </div>
+    
+    <!-- Information Section -->
+    <section class="content-box info-section">
+      <h2><i class="fas fa-info-circle" aria-hidden="true"></i> About Steal A Brainrot</h2>
+      <div class="info-card">
+        <p>Steal A Brainrot is a popular Roblox game where players collect various characters with different earning potentials. This advanced calculator helps you determine the optimal setup for maximizing your earnings per second (EPS) with comprehensive support for all game mechanics.</p>
+      </div>
+      
+      <h2><i class="fas fa-star" aria-hidden="true"></i> Key Features</h2>
+      <div class="feature-highlights">
+        <article class="feature-card">
+          <i class="fas fa-chart-pie" aria-hidden="true"></i>
+          <h3>Comprehensive Calculations</h3>
+          <p>Calculate earnings per second, minute, hour, day, week, month, and year based on your current setup with precise mathematical accuracy.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-dna" aria-hidden="true"></i>
+          <h3>Advanced Mutation Support</h3>
+          <p>Full support for primary and secondary mutations that multiply your earnings potential, including rare event mutations.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-redo" aria-hidden="true"></i>
+          <h3>Rebirth System Integration</h3>
+          <p>Factor in rebirth levels that provide exponential boosts to your earnings with accurate multiplier calculations.</p>
+        </article>
+        <article class="feature-card">
+          <i class="fas fa-save" aria-hidden="true"></i>
+          <h3>Save & Load Functionality</h3>
+          <p>Save your current setup and load it later for quick calculations and comparison between different configurations.</p>
+        </article>
+      </div>
+    </section>
+    
+    <div class="ad-container" role="complementary" aria-label="Advertisement">
+      <span class="ad-label">Advertisement</span>
+      <div id="features-ad">
+        <!-- AdSense Ad Code Here -->
+      </div>
+    </div>
+    
+    <!-- Tips Section -->
+    <section class="content-box tips-section">
+      <h2><i class="fas fa-lightbulb" aria-hidden="true"></i> Calculator Tips & Strategies</h2>
+      
+      <article class="tip-card">
+        <h4><i class="fas fa-chart-line" aria-hidden="true"></i> Maximizing Earnings</h4>
+        <p>Combine high-tier characters with compatible mutations for the best results. Rainbow mutation gives 10x boost but is extremely rare. Focus on consistent upgrades rather than waiting for perfect combinations.</p>
+      </article>
+      
+      <article class="tip-card">
+        <h4><i class="fas fa-dna" aria-hidden="true"></i> Mutation Strategy</h4>
+        <p>Secondary mutations stack multiplicatively with primary ones. For example: Bloodrot (2x) + Diamond (1.5x) = 3x total multiplier. Plan your mutation combinations carefully for maximum impact.</p>
+      </article>
+      
+      <article class="tip-card">
+        <h4><i class="fas fa-redo" aria-hidden="true"></i> Rebirth Benefits</h4>
+        <p>Each rebirth level gives a 10% multiplier to all earnings. Maximum rebirth (12) gives 220% total multiplier! Rebirth when you have enough resources to quickly regain your previous level.</p>
+      </article>
+      
+      <div class="rarity-info" role="region" aria-label="Character rarity information">
+        <h4>Character Rarity Tiers:</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+          <span class="badge common">Common: 1-15/s</span>
+          <span class="badge rare">Rare: 15-75/s</span>
+          <span class="badge epic">Epic: 75-200/s</span>
+          <span class="badge legendary">Legendary: 200-1200/s</span>
+          <span class="badge mythic">Mythic: 1200-7500/s</span>
+          <span class="badge god">God: 10,000-150,000/s</span>
+          <span class="badge secret">Secret: 250,000+/s</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- How to Use Section -->
+    <section class="content-box">
+      <h2><i class="fas fa-question-circle" aria-hidden="true"></i> How to Use This Calculator</h2>
+      <ol style="padding-left: 1.5rem; margin-top: 1rem; line-height: 1.8;">
+        <li>Select your character from the comprehensive dropdown menu</li>
+        <li>Set your current character level (1-100) for accurate calculations</li>
+        <li>Enter how many copies of the character you own</li>
+        <li>Select your active primary and secondary mutations</li>
+        <li>Adjust server luck multiplier and rebirth level</li>
+        <li>Add any additional global multipliers you have</li>
+        <li>Click "Calculate" to see detailed earnings breakdown</li>
+        <li>Use "Save Setup" to store your configuration for later use</li>
+      </ol>
+    </section>
+    
+    <!-- Quick Links Section -->
+    <section class="content-box">
+      <h2>Explore More Tools</h2>
+      <div class="quick-links">
+        <article class="quick-link-card">
+          <h3><i class="fas fa-balance-scale" aria-hidden="true"></i> Character Comparison</h3>
+          <p>Compare earnings between different characters and setups to find the most profitable combination for your investment strategy.</p>
+          <a href="/comparison" class="quick-link-btn">Go to Comparison Tool</a>
+        </article>
+        <article class="quick-link-card">
+          <h3><i class="fas fa-chart-line" aria-hidden="true"></i> Investment Optimizer</h3>
+          <p>Calculate the most efficient way to spend your resources for maximum earnings growth and return on investment.</p>
+          <a href="/optimizer" class="quick-link-btn">Go to Optimizer</a>
+        </article>
+        <article class="quick-link-card">
+          <h3><i class="fas fa-dna" aria-hidden="true"></i> Mutations Guide</h3>
+          <p>Comprehensive guide to all available mutations, their effects, and strategies for obtaining them during events.</p>
+          <a href="/mutations" class="quick-link-btn">View Mutations Guide</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="ad-container" role="complementary" aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+    <div id="bottom-content-ad">
+      <!-- AdSense Ad Code Here -->
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-sections">
+      <section class="footer-section">
+        <h4>Calculator Tools</h4>
+        <nav class="footer-links" aria-label="Footer navigation - Tools">
+          <a href="/" class="footer-link">Calculator</a>
+          <a href="/comparison" class="footer-link">Comparison</a>
+          <a href="/optimizer" class="footer-link">Optimizer</a>
+          <a href="/mutations" class="footer-link">Mutations</a>
+          <a href="/characters" class="footer-link">Characters</a>
+          <a href="/items" class="footer-link">Items</a>
+        </nav>
+      </section>
+      <section class="footer-section">
+        <h4>Information</h4>
+        <nav class="footer-links" aria-label="Footer navigation - Information">
+          <a href="/about" class="footer-link">About Us</a>
+          <a href="/contact" class="footer-link">Contact</a>
+          <a href="/disclaimer" class="footer-link">Disclaimer</a>
+          <a href="/privacy" class="footer-link">Privacy Policy</a>
+          <a href="/terms" class="footer-link">Terms & Conditions</a>
+        </nav>
+      </section>
+    </div>
+    
+    <div class="ad-container" role="complementary" aria-label="Advertisement">
+      <span class="ad-label">Advertisement</span>
+      <div id="footer-ad">
+        <!-- AdSense Ad Code Here -->
+      </div>
+    </div>
+    
+    <p class="footer-text">© 2025 Steal a Brainrot Tools - Unofficial Calculator and Guide. Not affiliated with the official game.</p>
+    <p class="footer-text">All game content and materials are trademarks of their respective owners.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Enhanced menu toggle with accessibility
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.querySelector(".hamburger");
+      const isActive = navLinks.classList.contains("active");
+      
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
+      
+      // Update ARIA attributes
+      hamburger.setAttribute("aria-expanded", !isActive);
+      
+      // Focus management
+      if (!isActive) {
+        navLinks.querySelector(".nav-link").focus();
+      }
+    }
+
+    // Complete character data with enhanced properties
+    const characters = {
+      // Common Characters
+      "Noobini Pizzanini": { base: 1, rarity: "common", icon: "fa-pizza-slice", color: "#ff6b6b", description: "Basic starter character" },
+      "Lirilì Larilà": { base: 3, rarity: "common", icon: "fa-music", color: "#74b9ff", description: "Musical character" },
+      "Tim Cheese": { base: 5, rarity: "common", icon: "fa-cheese", color: "#fdcb6e", description: "Cheesy character" },
+      "Fluriflura": { base: 7, rarity: "common", icon: "fa-snowflake", color: "#55efc4", description: "Frosty character" },
+      "Talpa Di Fero": { base: 9, rarity: "common", icon: "fa-paw", color: "#a29bfe", description: "Mole character" },
+      "Svinina Bombardino": { base: 10, rarity: "common", icon: "fa-bomb", color: "#fd79a8", description: "Explosive character" },
+      "Pipi Kiwi": { base: 13, rarity: "common", icon: "fa-kiwi-bird", color: "#e84393", description: "Bird character" },
+      
+      // Rare Characters
+      "Trippi Troppi": { base: 15, rarity: "rare", icon: "fa-walking", color: "#00b894", description: "Walking character" },
+      "Tung Tung Tung Sahur": { base: 25, rarity: "rare", icon: "fa-drum", color: "#6c5ce7", description: "Drumming character" },
+      "Gangster Footera": { base: 30, rarity: "rare", icon: "fa-shoe-prints", color: "#0984e3", description: "Foot-based character" },
+      "Bandito Bobritto": { base: 35, rarity: "rare", icon: "fa-mask", color: "#d63031", description: "Masked character" },
+      "Boneca Ambalabu": { base: 40, rarity: "rare", icon: "fa-doll", color: "#e84393", description: "Doll character" },
+      "Cacto Hipopotamo": { base: 50, rarity: "rare", icon: "fa-cactus", color: "#fdcb6e", description: "Cactus hippo hybrid" },
+      "Ta Ta Ta Ta Sahur": { base: 55, rarity: "rare", icon: "fa-drum-steelpan", color: "#00cec9", description: "Steel drum character" },
+      "Tric Trac Baraboom": { base: 65, rarity: "rare", icon: "fa-gamepad", color: "#ff7675", description: "Gaming character" },
+      
+      // Epic Characters
+      "Cappuccino Assassino": { base: 75, rarity: "epic", icon: "fa-coffee", color: "#a29bfe", description: "Coffee assassin" },
+      "Brr Brr Patapim": { base: 100, rarity: "epic", icon: "fa-wind", color: "#74b9ff", description: "Wind-based character" },
+      "Trulimero Trulicina": { base: 125, rarity: "epic", icon: "fa-hat-wizard", color: "#55efc4", description: "Wizard character" },
+      "Bambini Crostini": { base: 135, rarity: "epic", icon: "fa-child", color: "#ffeaa7", description: "Child character" },
+      "Bananita Dolphinita": { base: 150, rarity: "epic", icon: "fa-fish", color: "#a29bfe", description: "Dolphin banana hybrid" },
+      "Perochello Lemonchello": { base: 160, rarity: "epic", icon: "fa-lemon", color: "#fd79a8", description: "Lemon character" },
+      "Brri Brri Bicus Dicus Bombicus": { base: 175, rarity: "epic", icon: "fa-bomb", color: "#e84393", description: "Explosive character" },
+      
+      // Legendary Characters
+      "Burbaloni Loliloli": { base: 200, rarity: "legendary", icon: "fa-laugh-squint", color: "#00b894", description: "Laughing character" },
+      "Chimpanzini Bananini": { base: 300, rarity: "legendary", icon: "fa-monkey", color: "#6c5ce7", description: "Monkey banana hybrid" },
+      "Ballerina Cappuccina": { base: 500, rarity: "legendary", icon: "fa-shoe-prints", color: "#0984e3", description: "Dancing coffee character" },
+      "Chef Crabracadabra": { base: 600, rarity: "legendary", icon: "fa-crab", color: "#d63031", description: "Crab chef" },
+      "Lionel Cactuseli": { base: 650, rarity: "legendary", icon: "fa-cactus", color: "#e84393", description: "Lion cactus hybrid" },
+      "Glorbo Fruttodrillo": { base: 750, rarity: "legendary", icon: "fa-dragon", color: "#fdcb6e", description: "Fruit dragon" },
+      "Blueberrinni Octopusini": { base: 1000, rarity: "legendary", icon: "fa-fish", color: "#00cec9", description: "Blueberry octopus" },
+      "Pandaccini Bananini": { base: 1200, rarity: "legendary", icon: "fa-paw", color: "#ff7675", description: "Panda banana hybrid" },
+      
+      // Mythic Characters
+      "Lucky Block (Mythic)": { base: 0, rarity: "mythic", icon: "fa-cube", color: "#a29bfe", description: "Mystery box with random earnings" },
+      "Frigo Camelo": { base: 1200, rarity: "mythic", icon: "fa-ice-cream", color: "#74b9ff", description: "Ice cream camel" },
+      "Orangutini Ananassini": { base: 1700, rarity: "mythic", icon: "fa-monkey", color: "#55efc4", description: "Orangutan pineapple hybrid" },
+      "Rhino Toasterino": { base: 2100, rarity: "mythic", icon: "fa-bread-slice", color: "#ffeaa7", description: "Rhino toaster" },
+      "Bombardiro Crocodilo": { base: 2500, rarity: "mythic", icon: "fa-alligator", color: "#a29bfe", description: "Explosive crocodile" },
+      "Bombombini Gusini": { base: 5000, rarity: "mythic", icon: "fa-bomb", color: "#fd79a8", description: "Ultimate explosive character" },
+      "Cavallo Virtuoso": { base: 7500, rarity: "mythic", icon: "fa-horse", color: "#e84393", description: "Musical horse" },
+      "Spioniro Golubiro": { base: 0, rarity: "mythic", icon: "fa-user-secret", color: "#00b894", description: "Spy character with variable earnings" },
+      "Tigrulini Watermelini": { base: 7500, rarity: "mythic", icon: "fa-watermelon", color: "#6c5ce7", description: "Tiger watermelon hybrid" },
+      "Zibra Zubra Zibralini": { base: 6000, rarity: "mythic", icon: "fa-horse-head", color: "#0984e3", description: "Zebra hybrid" },
+      
+      // Brainrot God Characters
+      "Lucky Block (Brainrot God)": { base: 0, rarity: "god", icon: "fa-cube", color: "#d63031", description: "Ultimate mystery box" },
+      "Cocofanto Elefanto": { base: 10000, rarity: "god", icon: "fa-elephant", color: "#e84393", description: "Coconut elephant" },
+      "Gattatino Nyanino": { base: 0, rarity: "god", icon: "fa-cat", color: "#fdcb6e", description: "Nyan cat variation" },
+      "Girafa Celestre": { base: 20000, rarity: "god", icon: "fa-giraffe", color: "#00cec9", description: "Celestial giraffe" },
+      "Matteo": { base: 50000, rarity: "god", icon: "fa-user", color: "#ff7675", description: "Mysterious human character" },
+      "Tralalero Tralala": { base: 50000, rarity: "god", icon: "fa-music", color: "#a29bfe", description: "Musical character" },
+      "Odin Din Din Dun": { base: 75000, rarity: "god", icon: "fa-helmet-battle", color: "#74b9ff", description: "Norse god character" },
+      "Unclito Samito": { base: 0, rarity: "god", icon: "fa-user-tie", color: "#55efc4", description: "Businessman character" },
+      "Trenostruzzo Turbo 3000": { base: 150000, rarity: "god", icon: "fa-train", color: "#ffeaa7", description: "Ultimate train character" },
+      "Tigroligre Frutonni": { base: 60000, rarity: "god", icon: "fa-paw", color: "#a29bfe", description: "Tiger lion hybrid" },
+      "Orcalero Orcala": { base: 100000, rarity: "god", icon: "fa-fish", color: "#fd79a8", description: "Orca character" },
+      
+      // Secret Characters
+      "Lucky Block (Secret)": { base: 0, rarity: "secret", icon: "fa-cube", color: "#e84393", description: "Ultra rare mystery box" },
+      "La Vacca Saturno Saturnita": { base: 250000, rarity: "secret", icon: "fa-cow", color: "#00b894", description: "Cosmic cow" },
+      "Sammyni Spiderini": { base: 300000, rarity: "secret", icon: "fa-spider", color: "#6c5ce7", description: "Spider character" },
+      "Torrtuginni Dragonfrutini": { base: 350000, rarity: "secret", icon: "fa-dragon", color: "#0984e3", description: "Turtle dragon fruit hybrid" },
+      "Los Tralaleritos": { base: 500000, rarity: "secret", icon: "fa-users", color: "#d63031", description: "Group character" },
+      "Las Tralaleritas": { base: 650000, rarity: "secret", icon: "fa-user-friends", color: "#e84393", description: "Female group" },
+      "Graipuss Medussi": { base: 1000000, rarity: "secret", icon: "fa-cat", color: "#fdcb6e", description: "Cat jellyfish hybrid" },
+      "Pot Hotspot": { base: 2500000, rarity: "secret", icon: "fa-fire", color: "#00cec9", description: "Fiery character" },
+      "La Grande Combinazione": { base: 10000000, rarity: "secret", icon: "fa-star", color: "#ff7675", description: "Ultimate combination character" },
+      "Garama and Madundung": { base: 50000000, rarity: "secret", icon: "fa-crown", color: "#a29bfe", description: "King and queen duo" }
+    };
+
+    // Initialize the calculator
+    const characterSelect = document.getElementById("character");
+    const maxEarningPotential = 50000000 * 10 * 6 * 6 * 5; // Max possible earnings with all multipliers
+    
+    // Initialize character dropdown with enhanced accessibility
+    function initCharacterDropdown() {
+      const select = document.getElementById("character");
+      select.innerHTML = "";
+      
+      // Group characters by rarity
+      const grouped = {};
+      for (const [name, data] of Object.entries(characters)) {
+        if (!grouped[data.rarity]) {
+          grouped[data.rarity] = [];
+        }
+        grouped[data.rarity].push({name, ...data});
+      }
+      
+      // Add options grouped by rarity
+      const rarities = ["common", "rare", "epic", "legendary", "mythic", "god", "secret"];
+      const rarityLabels = {
+        "common": "Common",
+        "rare": "Rare", 
+        "epic": "Epic",
+        "legendary": "Legendary",
+        "mythic": "Mythic",
+        "god": "Brainrot God",
+        "secret": "Secret"
+      };
+      
+      for (const rarity of rarities) {
+        if (grouped[rarity]) {
+          const optgroup = document.createElement("optgroup");
+          optgroup.label = rarityLabels[rarity];
+          
+          grouped[rarity].sort((a, b) => b.base - a.base).forEach(char => {
+            const option = document.createElement("option");
+            option.value = char.name;
+            option.textContent = `${char.name} (${char.base}/s)`;
+            option.setAttribute("data-rarity", char.rarity);
+            optgroup.appendChild(option);
+          });
+          
+          select.appendChild(optgroup);
+        }
+      }
+      
+      // Set default value
+      select.value = "Noobini Pizzanini";
+      updateCharacterIcon();
+    }
+    
+    // Update character icon when selection changes
+    function updateCharacterIcon() {
+      const charName = characterSelect.value;
+      const charData = characters[charName];
+      const charIcon = document.getElementById("char-icon");
+      
+      if (charData) {
+        charIcon.innerHTML = `<i class="fas ${charData.icon}" aria-hidden="true"></i>`;
+        charIcon.style.backgroundColor = charData.color;
+        charIcon.setAttribute("aria-label", `${charName} character icon`);
+      }
+    }
+    
+    // Enhanced calculate earnings function
+    function calculateEarnings() {
+      try {
+        const charName = characterSelect.value;
+        const charData = characters[charName];
+        const quantity = parseInt(document.getElementById("quantity").value) || 1;
+        const level = parseInt(document.getElementById("level").value) || 1;
+        const mutation = parseFloat(document.getElementById("mutation").value) || 1;
+        const secondaryMutation = parseFloat(document.getElementById("secondary-mutation").value) || 1;
+        const luck = parseFloat(document.getElementById("luck").value) || 1;
+        const rebirths = parseInt(document.getElementById("rebirths").value) || 0;
+        const multiplier = parseFloat(document.getElementById("multiplier").value) || 1;
+        const baseLock = parseInt(document.getElementById("base-lock").value) || 30;
+        
+        // Enhanced calculation formulas
+        const levelMultiplier = 1 + (level - 1) * 0.05; // 5% increase per level
+        const rebirthMultiplier = 1 + (rebirths * 0.1); // 10% increase per rebirth
+        
+        // Calculate earnings with proper error handling
+        const baseEarnings = charData.base;
+        const mutatedEarnings = baseEarnings * mutation * secondaryMutation;
+        const totalPerSecond = mutatedEarnings * levelMultiplier * luck * multiplier * rebirthMultiplier * quantity;
+        
+        // Format numbers with proper localization
+        const formatNumber = (num) => {
+          if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
+          if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
+          if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+          if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
+          return num.toLocaleString();
+        };
+        
+        // Update UI with enhanced accessibility
+        document.getElementById("base-earnings").textContent = `$${formatNumber(baseEarnings)}`;
+        document.getElementById("mutated-earnings").textContent = `$${formatNumber(baseEarnings * mutation * secondaryMutation)}`;
+        document.getElementById("total-earnings").textContent = `$${formatNumber(totalPerSecond)}`;
+        
+        document.getElementById("earnings-per-minute").textContent = `$${formatNumber(totalPerSecond * 60)}`;
+        document.getElementById("earnings-per-hour").textContent = `$${formatNumber(totalPerSecond * 3600)}`;
+        document.getElementById("earnings-per-day").textContent = `$${formatNumber(totalPerSecond * 86400)}`;
+        document.getElementById("earnings-per-week").textContent = `$${formatNumber(totalPerSecond * 604800)}`;
+        document.getElementById("earnings-per-month").textContent = `$${formatNumber(totalPerSecond * 2592000)}`;
+        document.getElementById("earnings-per-year").textContent = `$${formatNumber(totalPerSecond * 31536000)}`;
+        
+        // Update character display
+        document.getElementById("result-title").textContent = charName;
+        updateCharacterIcon();
+        
+        // Update tags with enhanced information
+        const tagsDiv = document.getElementById("char-tags");
+        tagsDiv.innerHTML = "";
+        
+        const rarityTag = document.createElement("span");
+        rarityTag.className = `badge ${charData.rarity}`;
+        rarityTag.textContent = charData.rarity.charAt(0).toUpperCase() + charData.rarity.slice(1);
+        tagsDiv.appendChild(rarityTag);
+        
+        if (mutation > 1) {
+          const mutationTag = document.createElement("span");
+          mutationTag.className = "badge";
+          mutationTag.textContent = `Primary: ×${mutation}`;
+          tagsDiv.appendChild(mutationTag);
+        }
+        
+        if (secondaryMutation > 1) {
+          const secMutationTag = document.createElement("span");
+          secMutationTag.className = "badge";
+          secMutationTag.textContent = `Secondary: ×${secondaryMutation}`;
+          tagsDiv.appendChild(secMutationTag);
+        }
+        
+        if (level > 1) {
+          const levelTag = document.createElement("span");
+          levelTag.className = "badge";
+          levelTag.textContent = `Level ${level}`;
+          tagsDiv.appendChild(levelTag);
+        }
+        
+        if (rebirths > 0) {
+          const rebirthTag = document.createElement("span");
+          rebirthTag.className = "badge";
+          rebirthTag.textContent = `Rebirth ${rebirths}`;
+          tagsDiv.appendChild(rebirthTag);
+        }
+        
+        // Update earning potential bar with accessibility
+        const earningPotential = Math.min(100, (totalPerSecond / maxEarningPotential) * 100);
+        const progressBar = document.getElementById("earning-potential");
+        progressBar.style.width = `${earningPotential}%`;
+        progressBar.parentElement.setAttribute("aria-valuenow", earningPotential.toFixed(1));
+        
+        // Announce results to screen readers
+        const announcement = `Calculation complete. Total earnings: $${formatNumber(totalPerSecond)} per second.`;
+        announceToScreenReader(announcement);
+        
+      } catch (error) {
+        console.error("Calculation error:", error);
+        announceToScreenReader("Error occurred during calculation. Please check your inputs.");
+      }
+    }
+    
+    // Enhanced save/load functionality with error handling
+    function saveSetup() {
+      try {
+        const setup = {
+          character: characterSelect.value,
+          quantity: document.getElementById("quantity").value,
+          level: document.getElementById("level").value,
+          mutation: document.getElementById("mutation").value,
+          secondaryMutation: document.getElementById("secondary-mutation").value,
+          luck: document.getElementById("luck").value,
+          rebirths: document.getElementById("rebirths").value,
+          multiplier: document.getElementById("multiplier").value,
+          baseLock: document.getElementById("base-lock").value,
+          timestamp: new Date().toISOString()
+        };
+        
+        localStorage.setItem("brainrotCalculatorSetup", JSON.stringify(setup));
+        announceToScreenReader("Setup saved successfully!");
+        
+        // Visual feedback
+        const saveBtn = event.target;
+        const originalText = saveBtn.innerHTML;
+        saveBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Saved!';
+        saveBtn.classList.add("btn-success");
+        
+        setTimeout(() => {
+          saveBtn.innerHTML = originalText;
+          saveBtn.classList.remove("btn-success");
+        }, 2000);
+        
+      } catch (error) {
+        console.error("Save error:", error);
+        announceToScreenReader("Error saving setup. Please try again.");
+      }
+    }
+    
+    function loadSetup() {
+      try {
+        const savedSetup = localStorage.getItem("brainrotCalculatorSetup");
+        
+        if (savedSetup) {
+          const setup = JSON.parse(savedSetup);
+          
+          characterSelect.value = setup.character || "Noobini Pizzanini";
+          document.getElementById("quantity").value = setup.quantity || 1;
+          document.getElementById("level").value = setup.level || 1;
+          document.getElementById("mutation").value = setup.mutation || 1;
+          document.getElementById("secondary-mutation").value = setup.secondaryMutation || 1;
+          document.getElementById("luck").value = setup.luck || 1;
+          document.getElementById("rebirths").value = setup.rebirths || 0;
+          document.getElementById("multiplier").value = setup.multiplier || 1;
+          document.getElementById("base-lock").value = setup.baseLock || 30;
+          
+          updateCharacterIcon();
+          announceToScreenReader("Setup loaded successfully! Click Calculate to see results.");
+          
+          // Visual feedback
+          const loadBtn = event.target;
+          const originalText = loadBtn.innerHTML;
+          loadBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Loaded!';
+          loadBtn.classList.add("btn-success");
+          
+          setTimeout(() => {
+            loadBtn.innerHTML = originalText;
+            loadBtn.classList.remove("btn-success");
+          }, 2000);
+          
+        } else {
+          announceToScreenReader("No saved setup found.");
+        }
+      } catch (error) {
+        console.error("Load error:", error);
+        announceToScreenReader("Error loading setup. Please try again.");
+      }
+    }
+    
+    function resetCalculator() {
+      if (confirm("Are you sure you want to reset all values to default?")) {
+        characterSelect.value = "Noobini Pizzanini";
+        document.getElementById("quantity").value = 1;
+        document.getElementById("level").value = 1;
+        document.getElementById("mutation").value = 1;
+        document.getElementById("secondary-mutation").value = 1;
+        document.getElementById("luck").value = 1;
+        document.getElementById("rebirths").value = 0;
+        document.getElementById("multiplier").value = 1;
+        document.getElementById("base-lock").value = 30;
+        
+        // Reset results display
+        const resultElements = [
+          "base-earnings", "mutated-earnings", "total-earnings",
+          "earnings-per-minute", "earnings-per-hour", "earnings-per-day",
+          "earnings-per-week", "earnings-per-month", "earnings-per-year"
+        ];
+        
+        resultElements.forEach(id => {
+          document.getElementById(id).textContent = "$0";
+        });
+        
+        document.getElementById("earning-potential").style.width = "0%";
+        document.getElementById("earning-potential").parentElement.setAttribute("aria-valuenow", "0");
+        document.getElementById("result-title").textContent = "Character Earnings";
+        updateCharacterIcon();
+        document.getElementById("char-icon").style.backgroundColor = "#334155";
+        document.getElementById("char-tags").innerHTML = "";
+        
+        announceToScreenReader("Calculator reset to default values.");
+      }
+    }
+    
+    // Accessibility helper function
+    function announceToScreenReader(message) {
+      const announcement = document.createElement("div");
+      announcement.setAttribute("aria-live", "polite");
+      announcement.setAttribute("aria-atomic", "true");
+      announcement.className = "sr-only";
+      announcement.textContent = message;
+      document.body.appendChild(announcement);
+      
+      setTimeout(() => {
+        document.body.removeChild(announcement);
+      }, 1000);
+    }
+    
+    // Enhanced initialization with error handling
+    window.addEventListener('load', function() {
+      try {
+        initCharacterDropdown();
+        
+        // Add event listener for character selection change
+        characterSelect.addEventListener("change", updateCharacterIcon);
+        
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey || e.metaKey) {
+            switch(e.key) {
+              case 'Enter':
+                e.preventDefault();
+                calculateEarnings();
+                break;
+              case 's':
+                e.preventDefault();
+                saveSetup();
+                break;
+              case 'l':
+                e.preventDefault();
+                loadSetup();
+                break;
+              case 'r':
+                e.preventDefault();
+                resetCalculator();
+                break;
+            }
+          }
+        });
+        
+        // Add form validation
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+          input.addEventListener('input', function() {
+            const min = parseFloat(this.min);
+            const max = parseFloat(this.max);
+            const value = parseFloat(this.value);
+            
+            if (value < min) this.value = min;
+            if (max && value > max) this.value = max;
+          });
+        });
+        
+        // Initialize with fade-in animation
+        document.querySelectorAll('.content-box').forEach((box, index) => {
+          setTimeout(() => {
+            box.classList.add('fade-in-up');
+          }, index * 100);
+        });
+        
+      } catch (error) {
+        console.error("Initialization error:", error);
+      }
+    });
+
+    // Enhanced menu functionality with accessibility
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navLinksContainer = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      
+      // Close menu when clicking on a link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinksContainer.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav-container')) {
+          navLinksContainer.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Escape key to close menu
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && navLinksContainer.classList.contains('active')) {
+          navLinksContainer.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.focus();
+        }
+      });
+    });
+  </script>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Steal A Brainrot Calculator",
+    "description": "Advanced calculator for Steal A Brainrot character earnings with mutations and multipliers",
+    "url": "https://stealabrainrotcalculator.com/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Steal A Brainrot Tools"
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-24"
+  }
+  </script>
+</body>
+</html>
+
